@@ -13,7 +13,7 @@ export const headerTableStyles = ({
 })
 
 
-export const menuButtonStyles = (theme: any) => ({
+export const menuButtonStyles = () => ({
     textTransform: "none",
     marginBottom: 1
 })

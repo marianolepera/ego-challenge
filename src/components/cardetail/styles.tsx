@@ -34,7 +34,7 @@ export const subTitleDetailStyles = (theme: any) => ({
     },
 })
 
-export const descriptionDetailStyles = (theme: any) => ({
+export const descriptionDetailStyles = () => ({
     fontSize: "16px",
     fontWeight: 400,
     lineHeight: "27px",

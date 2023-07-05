@@ -8,14 +8,14 @@ export const footerContainerStyles = (theme: any) => ({
     },
 })
 
-export const titleFooterDetailStyles = (theme: any) => ({
+export const titleFooterDetailStyles = () => ({
     fontSize: "20px",
     fontWeight: 600,
     lineHeight: "27px",
     letterSpacing: "-0.4px"
 })
 
-export const contentFooterDetailStyles = (theme: any) => ({
+export const contentFooterDetailStyles = () => ({
     marginTop: 1,
     fontSize: "16px",
     fontWeight: 400,
