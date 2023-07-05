@@ -1,4 +1,4 @@
-# ego-chalenge
+# ego-challenge
 
 ## Getting Started
 
