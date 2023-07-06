@@ -21,7 +21,25 @@ const Table: React.FC<TableInterface> = ({ cars }: TableInterface) => {
         setAnchorEl(null);
     };
 
+    
+   
+
     React.useEffect(() => {
+        const getFilterCars = () => {
+
+            if (filterType === "todos") {
+                setFilterCars(cars)
+            }
+            else if (filterType == "autos") {
+                setFilterCars(cars?.filter((car: any) => car?.segment === 'Sedan' || car?.segment === 'Hatchback'))
+            }
+            else if (filterType == "pickups") {
+                setFilterCars(cars?.filter((car: any) => car?.segment === 'Pickups y Comerciales'))
+            }
+            else if (filterType == "suvs") {
+                setFilterCars(cars?.filter((car: any) => car?.segment === 'SUVs'))
+            }
+        }
         getFilterCars()
     }, [filterType, cars])
 
@@ -31,21 +49,6 @@ const Table: React.FC<TableInterface> = ({ cars }: TableInterface) => {
         setFilterType(event.target.value)
     }
 
-    const getFilterCars = () => {
-
-        if (filterType === "todos") {
-            setFilterCars(cars)
-        }
-        else if (filterType == "autos") {
-            setFilterCars(cars?.filter((car: any) => car?.segment === 'Sedan' || car?.segment === 'Hatchback'))
-        }
-        else if (filterType == "pickups") {
-            setFilterCars(cars?.filter((car: any) => car?.segment === 'Pickups y Comerciales'))
-        }
-        else if (filterType == "suvs") {
-            setFilterCars(cars?.filter((car: any) => car?.segment === 'SUVs'))
-        }
-    }
 
     return (
         <>

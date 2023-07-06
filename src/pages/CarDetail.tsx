@@ -14,22 +14,23 @@ const CarDetail = () => {
     const [error, setError] = useState(false)
 
     localStorage.setItem("id", id)
-    const getCarDetail = async () => {
-        setLoading(true)
-        try {
-            const data = await carServices.getCarModelDetail(id)
-            setCarDetail(data)
-            setLoading(false)
-        } catch (error: any) {
-            setLoading(false)
-            setError(true)
-            return error.message
-        }
-
-    }
+    
     useEffect(() => {
+        const getCarDetail = async () => {
+            setLoading(true)
+            try {
+                const data = await carServices.getCarModelDetail(id)
+                setCarDetail(data)
+                setLoading(false)
+            } catch (error: any) {
+                setLoading(false)
+                setError(true)
+                return error.message
+            }
+    
+        }
         getCarDetail()
-    }, [])
+    }, [id])
 
     if (loading) return <Loader size={60}></Loader>
 
