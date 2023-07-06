@@ -13,3 +13,4 @@ npm run dev
 - axios
 - mui
 - vite
+- react carousel
