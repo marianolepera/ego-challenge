@@ -7,7 +7,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
 interface TableInterface {
-    cars: Car,
+    cars: Car[],
 }
 const Table: React.FC<TableInterface> = ({ cars }: TableInterface) => {
     const [filterType, setFilterType] = React.useState('todos');
