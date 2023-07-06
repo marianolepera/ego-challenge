@@ -8,9 +8,10 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
     const [value, setValue] = React.useState('one');
     const navigate = useNavigate();
-    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-        setValue(newValue);
+    const handleChange = (event: any) => {
+        setValue(event);
     };
+    
     const localId = localStorage.getItem("id")
     const navigateToModel = () => {
         if (!localId) {
