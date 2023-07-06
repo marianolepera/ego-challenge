@@ -5,6 +5,7 @@
 Para levantar el proyecto:
 
 ```bash
+npm i
 npm run dev
 ```
 
@@ -13,3 +14,5 @@ npm run dev
 - axios
 - mui
 - vite
+- react carousel
+- react-router-dom
