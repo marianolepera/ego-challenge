@@ -8,6 +8,12 @@ Para levantar el proyecto:
 npm i
 npm run dev
 ```
+Link de deploy
+
+```bash
+https://egochallenge.netlify.app/
+```
+
 
 ## Tecnologias utilizadas
 
