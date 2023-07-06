@@ -3,18 +3,15 @@ import { Box, Button, Divider, FormControl, Grid, Menu, MenuItem, Select, Select
 import { buttonStyles, dividerStyles, formControlStyles, headerContainerStyles, headerTableStyles, menuButtonStyles, menuItemStyles, selectStyles, stackStyles, tableContainerStyles, titleTableStyles } from './styles';
 import CardCar from '../card/Card';
 import { Car } from '../../interfaces/carInterface';
-import Loader from "../../components/loader/Loader";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
 interface TableInterface {
     cars: Car,
-    loading: boolean,
-    error: boolean
 }
-const Table: React.FC<TableInterface> = ({ cars, loading, error }: TableInterface) => {
+const Table: React.FC<TableInterface> = ({ cars }: TableInterface) => {
     const [filterType, setFilterType] = React.useState('todos');
-    const [filterCars, setFilterCars] = React.useState([]);
+    const [filterCars, setFilterCars] = React.useState<Car[]>([]);
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -28,9 +25,7 @@ const Table: React.FC<TableInterface> = ({ cars, loading, error }: TableInterfac
         getFilterCars()
     }, [filterType, cars])
 
-    if (loading) return <Loader size={60}></Loader>
-
-    if (error) return <> <Typography sx={{ textAlign: "center" }}>Hubo un error en el servidor</Typography></>
+    
 
     const handleChangeFilter = (event: any) => {
         setFilterType(event.target.value)

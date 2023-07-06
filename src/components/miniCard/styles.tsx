@@ -1,5 +1,5 @@
 
-export const titleMiniCardStyles = (theme: any) => ({
+export const titleMiniCardStyles = () => ({
     textAlign: "center",
     fontSize: "20px",
     fontWeight: 600,
@@ -7,7 +7,7 @@ export const titleMiniCardStyles = (theme: any) => ({
     letterSpacing: "-0.4px"
 })
 
-export const descriptionMiniCardStyles = (theme: any) => ({
+export const descriptionMiniCardStyles = () => ({
     textAlign: "center",
     fontSize: "16px",
     fontWeight: 400,

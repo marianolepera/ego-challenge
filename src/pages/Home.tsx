@@ -2,9 +2,11 @@ import { Typography } from "@mui/material"
 import Table from "../components/table/Table"
 import * as React from 'react';
 import carServices from "../features/carService";
+import { Car } from "../interfaces/carInterface";
+import Loader from "../components/loader/Loader";
 
 const Home = () => {
-    const [cars, setCars] = React.useState([])
+    const [cars, setCars] = React.useState<Car[]>([])
     const [loading, setLoading] = React.useState(false)
     const [error, setError] = React.useState(false)
     const titleStyles = (theme: any) => ({
@@ -41,10 +43,15 @@ const Home = () => {
     React.useEffect(() => {
         getCars()
     }, [])
+
+    if (loading) return <Loader size={60}></Loader>
+
+    if (error) return <> <Typography sx={{ textAlign: "center" }}>Hubo un error en el servidor</Typography></>
+
     return (
         <>
             <Typography sx={titleStyles}>Descubrí todos los modelos </Typography>
-            <Table cars={cars} loading={loading} setLoading={setLoading} error={error}></Table>
+            <Table cars={cars} ></Table>
         </>
     )
 }

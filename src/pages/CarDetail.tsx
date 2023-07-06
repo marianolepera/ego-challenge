@@ -9,7 +9,7 @@ import { Typography } from "@mui/material";
 
 const CarDetail = () => {
     const { id }: any = useParams();
-    const [carDetail, setCarDetail] = useState([])
+    const [carDetail, setCarDetail] = useState<any>()
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
 

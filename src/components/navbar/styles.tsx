@@ -2,7 +2,7 @@ export const logoStyles = ({
     marginLeft: 2
 })
 
-export const tabsStyles = (theme: any) => ({
+export const tabsStyles = () => ({
     color: "black",
     fontSize: "14px",
     textTransform: "none",

@@ -1,4 +1,5 @@
 export interface Car {
+    filter?: any;
     id: number;
     name: string;
     segment: string;
